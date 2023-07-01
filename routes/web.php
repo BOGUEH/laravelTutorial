@@ -25,6 +25,6 @@ Route::get('/contact',[ContactController::class, 'index'])->name('contact');
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
-Route::get('/home', [HomeController::class, 'index']);
+Route::get('/home', HomeController::class);
 
 Route::resource('blog', BlogController::class);
