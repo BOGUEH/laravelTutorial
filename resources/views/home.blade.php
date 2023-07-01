@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row mt-5">
             @foreach ($blogs as $blog )
-
+            @if (!$blog['status'] == 1)
 
             <div class="col-md-4">
                 <div class="card">
@@ -23,9 +23,22 @@
                     </div>
                 </div>
             </div>
+            @else
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2> {{$blog['title']}} </h2>
+                        <p> {{$blog['body']}} </p>
+                        <button >pending</button>
+                    </div>
+                </div>
+            </div>
+            @endif
             @endforeach
         </div>
     </div>
+
+
     @endsection
 
 
