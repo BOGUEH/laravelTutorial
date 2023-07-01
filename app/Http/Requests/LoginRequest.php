@@ -11,7 +11,7 @@ class LoginRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -19,7 +19,7 @@ class LoginRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
-    public function rules(): array
+    public function rules()
     {
         return [
 
@@ -30,10 +30,12 @@ class LoginRequest extends FormRequest
         ];
     }
 
-    public function message () : array
+    public function message ()
     {
         return[
-            
-        ]
+
+            'name.alpha' => 'it can only contain alphabet, it will not accept numbers or any other special characters'
+
+        ];
     }
 }

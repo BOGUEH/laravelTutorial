@@ -1,3 +1,8 @@
 to create a controller, we use the following line
 we go the cmd and cd to to the project folder
 the type the following code "php artisan make:controller HomeController;
+
+to access the database using laravel, we use the thinker command. 'php artisan tinker'
+this will take you to another cmd.
+
+DB::connection()->getPDO();
