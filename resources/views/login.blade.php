@@ -9,6 +9,12 @@
             <div class="card-body">
 
                 <form action="{{route('login.submit')}}" method="POST">
+
+                 @if ($errors->any())
+                    @foreach ($errors->all() as $error )
+                        <div class="alert alert-danger"> {{$error}} </div>
+                    @endforeach
+                 @endif
                     @csrf
                     <div class="mb-2">
                         <label for="" class="form-label">User name</label>
