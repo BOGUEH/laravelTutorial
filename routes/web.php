@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,33 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function(){
-    $about = 'this is the about page';
-    return view('about', compact('about'));
-})->name('about');
+Route::get('/contact',[ContactController::class, 'index'])->name('contact');
 
-Route::get('/home', function(){
-    $blogs = [
-                [
-                    'title' => 'title one',
-                    'body' => 'this part contain the body and more',
-                    'status' => 1
-                ],
-                [
-                    'title' => 'title two',
-                    'body' => 'this part contain the body and more',
-                    'status' => 0
-                ],
-                [
-                    'title' => 'title three',
-                    'body' => 'this part contain the body and more',
-                    'status' => 1
-                ],
-                [
-                    'title' => 'title four',
-                    'body' => 'this part contain the body and more',
-                    'status' => 0  
-                ]
-        ];
-    return view("home", compact('blogs'));
-});
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::get('/home', [HomeController::class, 'index']);
+
+Route::resource('blog', BlogController::class);

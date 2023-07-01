@@ -1,0 +1,3 @@
+to create a controller, we use the following line
+we go the cmd and cd to to the project folder
+the type the following code "php artisan make:controller HomeController;
