@@ -12,31 +12,27 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $blogs = [
+        DB::table('posts')->insert([
             [
-                'title' => 'title one',
-                'body' => 'this part contain the body and more',
-                'status' => 1
+                'title' => "data test 1",
+                'description'=> 'Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Minima dolorem soluta maiores nostrum
+                                    molestiae excepturi natus at eligendi laudantium odit!',
+                'status'=> 1,
+                'published_date'=>   date('d-m-y'),
+                'User_ID'=> 1,
             ],
             [
-                'title' => 'title two',
-                'body' => 'this part contain the body and more',
-                'status' => 0
+                'title' => "data test 2",
+                'description'=> 'Lorem ipsum dolor sit, amet consectetur
+                                    adipisicing elit. Minima dolorem soluta maiores nostrum
+                                    molestiae excepturi natus at eligendi laudantium odit!',
+                'status'=> 1,
+                'published_date'=>   date('d-m-y'),
+                'User_ID'=> 2,
             ],
-            [
-                'title' => 'title three',
-                'body' => 'this part contain the body and more',
-                'status' => 1
-            ],
-            [
-                'title' => 'title four',
-                'body' => 'this part contain the body and more',
-                'status' => 0
-            ]
-    ];
 
-    return DB::table('posts')->where('id','>', '10')->where('id','<', '40')->get();
-
-return view("home", compact('blogs'));
+            ]);
+        dd('inserted successful');
     }
 }
