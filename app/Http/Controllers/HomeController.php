@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -33,6 +34,9 @@ class HomeController extends Controller
                 'status' => 0
             ]
     ];
+
+    return DB::table('posts')->where('id','>', '10')->where('id','<', '40')->get();
+
 return view("home", compact('blogs'));
     }
 }
