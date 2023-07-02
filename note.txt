@@ -6,3 +6,17 @@ to access the database using laravel, we use the thinker command. 'php artisan t
 this will take you to another cmd.
 
 DB::connection()->getPDO();
+
+how to create php migration table
+we enter this code 'php artisan make:migration create_users_table'
+
+php artisan migrate:reset -this will remove all table
+php artisan migrate:rollback would remove the last created table
+to migrate a single file we type the following command
+'php artisan migrate --path/database/migrations/'the db name''
+
+to seed data to the database we use the 'php artisan make:seeder PostSeeder'
+this will create a file where we can create a dommy data for the data.
+
+after configuring the data, when we want to post data to the database, we use
+'php artisan db:seed
