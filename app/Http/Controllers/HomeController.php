@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,12 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-        DB::table('posts')->where('id', '53')->delete();
-        dd('deleted successfully');
+
+        $posts = Post::all();
+
+        foreach ($posts as $post) {
+            echo $post->title;
+        }
     }
+        // dd('lets check this');
 }
