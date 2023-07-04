@@ -14,11 +14,17 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
 
-        $posts = Post::all();
+        $post = new Post();
 
-        foreach ($posts as $post) {
-            echo $post->title;
-        }
+        $post->title = 'title 4';
+        $post->description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, maxime.';
+        $post->status = 1;
+        $post->published_date = date('d-m-y');
+        $post->User_ID = '10';
+        $post->category_id = 22;
+        $post->views = 200;
+
+        $post->save();
     }
         // dd('lets check this');
 }
