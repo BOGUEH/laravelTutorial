@@ -18,6 +18,7 @@ class HomeController extends Controller
         // $post->title = 'the is a new title';
 
         // $post->save();
+       
     }
         // dd('lets check this');
 }
