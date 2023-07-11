@@ -12,28 +12,17 @@
 
     <div class="container">
         <div class="row mt-5">
-            @foreach ($blogs as $blog )
-            @if (!$blog['status'] == 1)
+            @foreach ($posts as $post )
 
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
-                        <h2> {{$blog['title']}} </h2>
-                        <p> {{$blog['body']}} </p>
+                        <h2> {{$post['title']}} </h2>
+                        <p> {{$post['description']}} </p>
                     </div>
                 </div>
             </div>
-            @else
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h2> {{$blog['title']}} </h2>
-                        <p> {{$blog['body']}} </p>
-                        <button >pending</button>
-                    </div>
-                </div>
-            </div>
-            @endif
+
             @endforeach
         </div>
     </div>
