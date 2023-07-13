@@ -1,34 +1,26 @@
  {{-- Begin page content --}}
  @extends('layout.master')
  @section('content')
- <main role="main" class="container">
-    <h1 class="mt-5 text-danger">Home</h1>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-    Vel nostrum sit inventore, voluptate labore aut cupiditate nisi,
-    quaerat accusamus debitis id autem. Animi beatae voluptates quos,
-     non nam ullam reprehenderit.
-</main>
-
-
-    <div class="container">
-        <div class="row mt-5">
-            @foreach ($posts as $post )
-
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h2> {{$post['title']}} </h2>
-                        <p> {{$post['description']}} </p>
+<main class="contaner">
+    <div class="col-md-4 mt-5">
+        <div class="card">
+            <div class="card-body">
+                <form action=" {{route('upload-file')}} " enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for=""> Upload </label>
+                        <input type="file" name="image" class="form-control">
                     </div>
-                </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success mt-2">
+                    </div>
+                </form>
             </div>
-
-            @endforeach
         </div>
     </div>
+</main>
 
-
-    @endsection
+@endsection
 
 
 
