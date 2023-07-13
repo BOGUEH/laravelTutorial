@@ -8,6 +8,6 @@ class ImageController extends Controller
 {
         public function handleImage(Request $request)
     {
-        $request->image->store('/');
+        $request->image->storeAs('/image', 'new_image.jpg');
     }
 }

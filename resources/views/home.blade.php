@@ -2,6 +2,8 @@
  @extends('layout.master')
  @section('content')
 <main class="contaner">
+
+        <img src="{{asset('storage/image/new_image.jpg')}}" alt="">
     <div class="col-md-4 mt-5">
         <div class="card">
             <div class="card-body">
