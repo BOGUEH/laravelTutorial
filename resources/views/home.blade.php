@@ -5,7 +5,14 @@
 
         <img src="{{asset('storage/image/new_image.jpg')}}" alt="">
     <div class="col-md-4 mt-5">
+
         <div class="card">
+             @if ($errors->any())
+                @foreach ( $errors->all() as $error )
+                    <div class="alert alert-danger"> {{$error}} </div>
+
+                @endforeach
+             @endif
             <div class="card-body">
                 <form action=" {{route('upload-file')}} " enctype="multipart/form-data" method="POST">
                     @csrf
